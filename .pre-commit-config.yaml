@@ -27,7 +27,7 @@ repos:
           stages: [push]
         - id: pytest
           name: pytest
-          entry: make test
+          entry: make run_tests
           language: system
           always_run: true
           pass_filenames: false
