@@ -16,6 +16,7 @@ mypy = "^1.11.2"
 isort = "^5.13.2"
 pydocstyle = "^6.3.0"
 yapf = "^0.40.2"
+pytest = "^8.3.3"
 
 [tool.mypy]
 python_version = "3.12"
@@ -49,6 +50,26 @@ split_before_expression_after_opening_paren = true
 split_before_first_argument = true
 split_complex_comprehension = false
 use_tabs = true
+
+[tool.pytest.ini_options]
+addopts="--cov --cov-report html --cov-report term"
+filterwarnings = []
+pythonpath = "src"
+
+[tool.coverage.run]
+command_line = "-m pytest"
+data_file = "./coverage_report/.coverage"
+omit = ["*/__init__.py"]
+source = ["src/"]
+
+[tool.coverage.report]
+fail_under = 90
+show_missing = true
+skip_covered = true
+skip_empty = true
+
+[tool.coverage.html]
+directory = "./coverage_report/html_report"
 
 [build-system]
 requires = ["poetry-core"]
