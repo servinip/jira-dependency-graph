@@ -9,8 +9,46 @@ repository = "https://github.com/servinip/jira-dependency-graph"
 packages = [{include = "jira_dependency_graph"}]
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.12"
 
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.11.2"
+isort = "^5.13.2"
+pydocstyle = "^6.3.0"
+yapf = "^0.40.2"
+
+[tool.mypy]
+python_version = "3.12"
+exclude = "test/"
+ignore_missing_imports = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+warn_unused_ignores = true
+warn_return_any = true
+warn_unreachable = true
+pretty = true
+
+[tool.pydocstyle]
+convention = "google"
+
+[tool.yapf]
+based_on_style = "pep8"
+allow_split_before_dict_value = false
+arithmetic_precedence_indication = true
+coalesce_brackets = false
+column_limit = 120
+dedent_closing_brackets = true
+each_dict_entry_on_separate_line = true
+force_multiline_dict = true
+indent_dictionary_value = true
+indent_width = 4
+spaces_before_comment = 2
+split_before_dot = true
+split_before_expression_after_opening_paren = true
+split_before_first_argument = true
+split_complex_comprehension = false
+use_tabs = true
 
 [build-system]
 requires = ["poetry-core"]
