@@ -1,12 +1,10 @@
 [tool.poetry]
-name = "kadru"
+name = "jira-dependency-graph"
 version = "1.0.0"
-description = "A template for Python projects"
-authors = [
-    "Pietro Servini <pietro.servini@gmail.com>"
-]
+description = ""
+authors = []
 readme = "README.md"
-repository = "https://github.com/servinip/kadru"
+repository = ""
 packages = [
     {include = "src"}
 ]
