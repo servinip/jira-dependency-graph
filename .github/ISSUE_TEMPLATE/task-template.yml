@@ -1,0 +1,27 @@
+name: Feature task
+description: Add a feature
+title: "FEATURE: "
+labels: []
+projects: []
+body:
+  - type: textarea
+    id: why
+    attributes:
+      label: Context
+      description: Why do we need to do this?
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: Steps to complete
+      description: What needs to be done to achieve this?
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: Definition of done
+      description: What should be achieved as part of this issue?
+    validations:
+      required: true

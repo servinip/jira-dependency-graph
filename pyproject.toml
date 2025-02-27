@@ -1,0 +1,79 @@
+[tool.poetry]
+name = "kadru"
+version = "1.0.0"
+description = "A template for Python projects"
+authors = [
+    "Pietro Servini <pietro.servini@gmail.com>"
+]
+readme = "README.md"
+repository = "https://github.com/servinip/kadru"
+packages = [
+    {include = "src"}
+]
+
+
+[tool.poetry.dependencies]
+python = "~3.12"
+
+
+[tool.poetry.group.dev.dependencies]
+pydocstyle = "^6.3.0"
+isort = "^6.0.1"
+mypy = "^1.15.0"
+black = "^25.1.0"
+pytest = "^8.3.4"
+pytest-cov = "^6.0.0"
+pre-commit = "^4.1.0"
+
+
+[tool.pydocstyle]
+convention = "google"
+
+
+[tool.isort]
+profile = "black"
+
+[tool.black]
+line-length=120
+
+
+[tool.mypy]
+python_version = "3.12"
+exclude = "tests/"
+ignore_missing_imports = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+warn_unused_ignores = true
+warn_return_any = true
+warn_unreachable = true
+pretty = true
+
+
+[tool.pytest.ini_options]
+addopts="--cov --cov-report html --cov-report term"
+filterwarnings = []
+pythonpath = "src"
+
+
+[tool.coverage.run]
+command_line = "-m pytest"
+data_file = "./coverage_report/.coverage"
+omit = ["*/__init__.py"]
+source = ["src/"]
+
+
+[tool.coverage.report]
+fail_under = 90
+show_missing = true
+skip_covered = true
+skip_empty = true
+
+
+[tool.coverage.html]
+directory = "./coverage_report/html_report"
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
