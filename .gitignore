@@ -21,3 +21,6 @@ coverage_report/*
 *.cover
 *.py,cover
 .pytest_cache/
+
+# python stuff
+__pycache__/
