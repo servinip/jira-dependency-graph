@@ -24,3 +24,10 @@ coverage_report/*
 
 # python stuff
 __pycache__/
+
+# Jupyter notebooks
+exploration/.ipynb_checkpoints/
+
+# pyvis
+exploration/lib/
+*.html
